@@ -1,16 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SideMenuComponent } from '../../../shared/components/side-menu/side-menu.component';
+import { JpoSideMenuComponent, TitleColor} from 'jpo-side-menu'
 
 @Component({
   selector: 'app-admin-layout',
   standalone: true,
-  imports: [RouterOutlet,SideMenuComponent],
+  imports: [RouterOutlet,JpoSideMenuComponent],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'
 })
 export default class AdminLayoutComponent {
   isAuthenticated = signal(false);
+  titleColorReference = TitleColor;
 
   onLogin()
   {
